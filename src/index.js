@@ -86,7 +86,7 @@ export const StackedCarousel = ({ style, onCardChange, containerClassName, cardC
     }
   }, [indexes.currentIndex]);
 
-  
+
   useEffect(() => {
     onCardChange && onCardChange(indexes);
     const transitionInterval = setInterval(() => {
@@ -100,7 +100,7 @@ export const StackedCarousel = ({ style, onCardChange, containerClassName, cardC
       {
         leftButton ?
           <span onClick={handleLeftButton}>{leftButton}</span>
-          : <span className={styles.leftButton} onClick={handleLeftButton}>&lsaquo;</span>
+          : null
       }
       <ul style={{...style}} className={`${styles.cardCarousel} ${containerClassName? containerClassName : styles.carouselDefault}`}>
         {cardItems.map((card, index) => (
@@ -115,7 +115,7 @@ export const StackedCarousel = ({ style, onCardChange, containerClassName, cardC
       {
         rightButton ?
           <span onClick={handleCardTransition}>{rightButton}</span>
-          : <span className={styles.rightButton} onClick={handleCardTransition}>&rsaquo;</span>
+          : null
       }
     </div>
   );
